@@ -321,7 +321,7 @@ class TournamentGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Gomoku turnīra vadība")
-        self.root.geometry("1280x760")
+        self.root.geometry("1600x760")
         self.root.configure(bg="#eef1f5")
 
         self.bots = load_all_bots()
@@ -404,7 +404,7 @@ class TournamentGUI:
         self.board_canvas.pack()
         self._draw_grid_once()
 
-        right = tk.Frame(body, bg="white", width=330)
+        right = tk.Frame(body, bg="white", width=760)
         right.pack(side="right", fill="y")
         standings_tab = tk.Frame(right, bg="white")
         standings_tab.pack(fill="both", expand=True)
@@ -415,10 +415,10 @@ class TournamentGUI:
         self.standings = ttk.Treeview(standings_tab, columns=columns,
                                       show="headings", height=8)
         headings = ("V.", "Dalībnieks", "Pkt", "S", "U", "N", "Z", "Laiks")
-        widths = (38, 150, 48, 38, 38, 38, 38, 75)
+        widths = (38, 180, 48, 38, 38, 38, 38, 75)
         for column, heading, width in zip(columns, headings, widths):
             self.standings.heading(column, text=heading)
-            self.standings.column(column, width=width, anchor="center")
+            self.standings.column(column, width=width, minwidth=width, stretch=False, anchor="center")
         self.standings.pack(fill="both", expand=False, padx=4, pady=(0, 4))
 
         archive_tab = tk.Frame(right, bg="white")
@@ -434,10 +434,10 @@ class TournamentGUI:
             height=10,
         )
         archive_headings = ("Nr.", "Pirmais", "Otrais", "Laiks 1", "Laiks 2", "Rez.", "Gājiens")
-        archive_widths = (38, 100, 100, 58, 58, 58, 58)
+        archive_widths = (38, 240, 240, 65, 65, 65, 65)
         for column, heading, width in zip(archive_columns, archive_headings, archive_widths):
             self.archive_table.heading(column, text=heading)
-            self.archive_table.column(column, width=width, anchor="center")
+            self.archive_table.column(column, width=width, minwidth=width, stretch=False, anchor="center")
         self.archive_table.pack(fill="both", expand=True, padx=4, pady=4)
 
         bottom = tk.Frame(self.root, bg="#eef1f5")
