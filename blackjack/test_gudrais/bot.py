@@ -1,6 +1,6 @@
 """Hi-Lo kāršu skaitīšanas un blackjack pamatstratēģijas testa bots."""
 
-BOT_NAME = "Stratēģis"
+BOT_NAME = "Half Smart bot"
 
 _HI_LO = {
     "2": 1,
