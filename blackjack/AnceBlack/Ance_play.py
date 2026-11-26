@@ -7,7 +7,7 @@ import random
 from dataclasses import dataclass, field
 from typing import Callable
 
-from Ance_black import Card, Hand, Shoe
+from blackjack.AnceBlack.Ance_black import Card, Hand, Shoe
 from AnceBlack.bot import BOT_NAME, decide_action, place_bet
 
 STARTING_BANKROLL = 1000

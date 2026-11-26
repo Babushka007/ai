@@ -7,7 +7,7 @@ import random
 import tkinter as tk
 from collections.abc import Callable
 
-from Ance_black import Card, Hand, Shoe
+from blackjack.AnceBlack.Ance_black import Card, Hand, Shoe
 from AnceBlack.bot import BOT_NAME, place_bet
 from play import (
     MAX_BET,
